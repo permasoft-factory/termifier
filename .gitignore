@@ -1,0 +1,8 @@
+# NodeJs modules
+node_modules
+
+# Turbo cache
+.turbo
+
+# Compiled code
+dist
