@@ -6,3 +6,7 @@ node_modules
 
 # Compiled code
 dist
+
+# Typedoc
+.nojekyll
+**/*/docs/README.md

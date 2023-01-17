@@ -3,7 +3,7 @@ import chalkPipe from 'chalk-pipe';
 /**
  *
  */
-export type HexColorString = `#${string}`;
+export type HexColorString = `#${string}` | string;
 
 /**
  * See https://htmlcolorcodes.com/color-names/
@@ -17,9 +17,10 @@ export const hexColors = {
 /**
  * @description
  * @param {string} text
- * @param {string} hexColor
+ * @param {HexColorString} hexColor?
  * @returns {string}
  */
-export function addColor(text: string, hexColor: string): string {
+export function addColor(text: string, hexColor?: HexColorString): string {
+	if (hexColor !== 'string') return text;
 	return chalkPipe(hexColor)(text);
 }
