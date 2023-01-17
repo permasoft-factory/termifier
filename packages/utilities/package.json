@@ -1,6 +1,7 @@
 {
     "name": "@termifier/utilities",
     "author": "permasoft-factory",
+    "description": "A collection of useful functions for Termifier",
     "version": "1.0.0",
     "license": "MIT",
     "main": "./dist/index.js",
@@ -17,15 +18,14 @@
         "dist/**/*.d*"
     ],
     "scripts": {
-        "doc": "typedoc",
         "build": "tsup"
+    },
+    "dependencies": {
+        "strip-ansi": "5.2.0"
     },
     "devDependencies": {
         "@sapphire/ts-config": "^3.3.4",
         "tsup": "^6.5.0",
         "typescript": "^4.9.4"
-    },
-    "dependencies": {
-        "strip-ansi": "5.2.0"
     }
 }

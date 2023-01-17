@@ -1,14 +1,43 @@
 import stripAinsi from 'strip-ansi';
-import type { WriteStream } from "node:tty";
+
+import { isNegative } from './';
+
+import type { WriteStream } from 'node:tty';
 
 /**
- * 
+ * @description Content to center in the writable side of a TTY
+ * @param {string} message Message to center
+ * @param {WriteStream} stdout? Writable side of a TTY
+ * @returns {string} The centered message if possible
+ * @exemple
+ * ```typescript
+ * import { centerContent } from '@termifier/utilities';
+ *
+ * console.Log('Hello world  !');
+ *
+ * // > output
+ * // ╭────────────────────────╮
+ * // │                        │
+ * // │ Hello world  !         │
+ * // │                        │
+ * // ╰────────────────────────╯
+ *
+ * console.Log(centerContent('Hello world  !'));
+ *
+ * // > output
+ * // ╭────────────────────────╮
+ * // │                        │
+ * // │     Hello world  !     │
+ * // │                        │
+ * // ╰────────────────────────╯
+ * ```
  */
-export function centerMessage (message: string, stdout: WriteStream = process.stdout): string {
-    const consoleColumns: number = stdout.columns;
-    const messageLength: number = stripAinsi(message).length;
+export function centerContent(message: string, stdout: WriteStream = process.stdout): string {
+	const consoleColumns: number = stdout.columns;
+	const messageLength: number = stripAinsi(message).length;
 
-    const padding = ' '.repeat((consoleColumns / 2) - ( messageLength / 2 ));
+	const centerLength = consoleColumns / 2 - messageLength / 2;
+	const padding = ' '.repeat(centerLength);
 
-    return padding + message;
+	return isNegative(centerLength) ? message : padding + message;
 }
