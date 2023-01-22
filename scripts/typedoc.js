@@ -1,8 +1,8 @@
 const chalkPipe = require('chalk-pipe');
 const execa = require('execa');
 
-const { resolve: resolvePath } = require('node:path');
 const { readdirSync } = require('node:fs');
+const { resolve: resolvePath } = require('node:path');
 
 const { Listr } = require('listr2');
 
@@ -35,10 +35,10 @@ function getTasks() {
 			task: (ctx, task) => {
 				const subprocess = execa('pnpm typedoc ' + commandArgs.join(' '));
 				subprocess.stdout.pipe(task.stdout());
-		
+
 				return subprocess;
 			}
-		})
+		});
 	});
 
 	return tasks;
