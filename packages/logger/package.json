@@ -17,13 +17,11 @@
         "dist/**/*.d*"
     ],
     "scripts": {
-        "doc": "typedoc",
         "build": "tsup"
     },
     "dependencies": {
         "@termifier/utilities": "workspace:utilities",
         "chalk-pipe": "4.0.0",
-        "ora": "5.4.1",
         "verror": "^1.10.1"
     },
     "devDependencies": {
