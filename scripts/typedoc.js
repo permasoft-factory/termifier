@@ -1,15 +1,16 @@
+const chalkPipe = require('chalk-pipe');
 const execa = require('execa');
 
-const { readdirSync } = require('node:fs');
 const { resolve: resolvePath } = require('node:path');
+const { readdirSync } = require('node:fs');
 
 const { Listr } = require('listr2');
 
 const packagesFolder = resolvePath(__dirname, '../', 'packages/');
 const packagesList = readdirSync(packagesFolder);
 
-function getCommands() {
-	const commands = [];
+function getTasks() {
+	const tasks = [];
 
 	packagesList.forEach((package) => {
 		const packageFolder = resolvePath(packagesFolder, package);
@@ -29,27 +30,22 @@ function getCommands() {
 			resolvePath(srcFolder, 'index.ts')
 		];
 
-		commands.push('pnpm typedoc ' + commandArgs.join(' '));
+		tasks.push({
+			title: `Generating documentation for ${chalkPipe('yellow')(packageFolder.split('\\').slice(-1)[0])}`,
+			task: (ctx, task) => {
+				const subprocess = execa('pnpm typedoc ' + commandArgs.join(' '));
+				subprocess.stdout.pipe(task.stdout());
+		
+				return subprocess;
+			}
+		})
 	});
 
-	return commands;
+	return tasks;
 }
 
-const commandsList = getCommands();
-
-const tasks = new Listr({
-	title: `Generating documentation for ${commandsList.length} packages`,
-	task: (ctx, task) => {
-		const subprocess = execa(commandsList.join(' && '));
-
-		subprocess.stdout.pipe(task.stdout());
-
-		return subprocess;
-	}
-});
-
 try {
-	tasks.run();
+	new Listr(getTasks()).run();
 } catch (e) {
 	console.error(e);
 }

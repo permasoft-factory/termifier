@@ -11,6 +11,7 @@
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^3.3.4",
 		"@types/node": "^18.11.18",
+		"chalk-pipe": "4.0.0",
 		"execa": "4.1.0",
 		"listr2": "^5.0.6",
 		"prettier": "^2.8.3",
