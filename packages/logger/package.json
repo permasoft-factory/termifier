@@ -1,6 +1,7 @@
 {
     "name": "@termifier/logger",
     "author": "permasoft-factory",
+    "description": "Make your logs more ethetic, easier",
     "version": "1.0.0",
     "license": "MIT",
     "main": "./dist/index.js",

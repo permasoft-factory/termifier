@@ -1,4 +1,6 @@
 import { addColor, hexColors } from './';
+import { isUndefined } from '@termifier/utilities';
+
 import { VError } from 'verror';
 
 import type { HexColorString } from './';
@@ -7,14 +9,83 @@ import type { HexColorString } from './';
  * Different parameters of the message to be stylized
  */
 export interface LoggerMessageOptions {
-	dateColor?: HexColorString;
-	labelColor: HexColorString;
+	/**
+	 *
+	 */
+	level: LogLevel;
+
+	/**
+	 *
+	 */
+	colors: {
+		/**
+		 *
+		 */
+		date?: HexColorString;
+
+		/**
+		 *
+		 */
+		label?: HexColorString;
+	};
 }
 
 /**
  *
  */
+export enum LogLevel {
+	/**
+	 *
+	 */
+	Debug = 10,
+
+	/**
+	 *
+	 */
+	Trace = 20,
+
+	/**
+	 *
+	 */
+	Info = 30,
+
+	/**
+	 *
+	 */
+	Warn = 40,
+
+	/**
+	 *
+	 */
+	Error = 50,
+
+	/**
+	 *
+	 */
+	Fatal = 60
+}
+
+/**
+ *
+ */
+export type LogMethods = 'trace' | 'debug' | 'info' | 'warn' | 'error';
+
+/**
+ * Make your logs more ethetic, easier
+ */
 export class Logger {
+	/**
+	 *
+	 */
+	static levels = new Map<LogLevel, LogMethods>([
+		[LogLevel.Debug, 'debug'],
+		[LogLevel.Trace, 'trace'],
+		[LogLevel.Info, 'info'],
+		[LogLevel.Warn, 'warn'],
+		[LogLevel.Error, 'error'],
+		[LogLevel.Fatal, 'error']
+	]);
+
 	/**
 	 *
 	 */
@@ -22,33 +93,37 @@ export class Logger {
 
 	/**
 	 * @description
-	 * @param {string} message
+	 * @param {string} message Message to write
 	 * @returns {void}
 	 */
 	public info(message: string): void {
-		this.write('info', message, { labelColor: hexColors.royalBlue });
+		this.write('info', message, { level: LogLevel.Info, colors: { label: hexColors.royalBlue } });
 	}
 
 	/**
 	 * @description
-	 * @param {string} message
+	 * @param {string} message Message to write
 	 * @param {...any[]} params
 	 * @returns {void}
 	 */
 	public error(message: string, ...params: any[]): void {
 		const error = new VError(message, ...params);
-		this.write('error', error.message, { labelColor: hexColors.crimson });
+		this.write('error', error.message, { level: LogLevel.Error, colors: { label: hexColors.crimson } });
 	}
 
 	/**
-	 * @description
-	 * @param {string} label
-	 * @param {string} message
-	 * @param {MessageOptions} options
+	 * @description Style a message to write in the terminal
+	 * @param {string} label Label to identify the message category
+	 * @param {string} message Message to write
+	 * @param {LoggerMessageOptions} options Message options
 	 * @returns {void}
 	 */
 	public write(label: string, message: string, options: LoggerMessageOptions): void {
-		console.log(this.buildMessage(label, message, options).join(' '));
+		const method = Logger.levels.get(options.level);
+
+		if (isUndefined(method)) return;
+
+		console[method as LogMethods](this.buildMessage(label, message, options));
 	}
 
 	/**
@@ -56,10 +131,10 @@ export class Logger {
 	 * @param {string} label
 	 * @param {string} message
 	 * @param {LoggerMessageOptions} options
-	 * @returns {string[]}
+	 * @returns {string}
 	 */
-	public buildMessage(label: string, message: string, options: LoggerMessageOptions): string[] {
-		return [this.addDate(undefined, options.dateColor), this.addLabel(label, options.labelColor), message];
+	public buildMessage(label: string, message: string, options: LoggerMessageOptions): string {
+		return [this.addDate(undefined, options.colors.date), this.addLabel(label, options.colors.label), message].join(' ');
 	}
 
 	/**
