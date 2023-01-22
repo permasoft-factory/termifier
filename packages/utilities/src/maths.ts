@@ -1,6 +1,6 @@
 /**
  * @description Checks if the given number is negative
- * @param number Number to test
+ * @param {number} number Number to test
  * @returns {boolean}
  */
 export function isNegative(number: number): boolean {

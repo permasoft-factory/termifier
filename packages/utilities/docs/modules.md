@@ -8,6 +8,7 @@
 
 - [centerContent](modules.md#centercontent)
 - [isNegative](modules.md#isnegative)
+- [isUndefined](modules.md#isundefined)
 - [readFileAsync](modules.md#readfileasync)
 
 ## Functions
@@ -25,7 +26,7 @@ Content to center in the writable side of a TTY
 ```typescript
 import { centerContent } from '@termifier/utilities';
 
-console.Log('Hello world  !');
+console.log('Hello world  !');
 
 // > output
 // ╭────────────────────────╮
@@ -34,7 +35,7 @@ console.Log('Hello world  !');
 // │                        │
 // ╰────────────────────────╯
 
-console.Log(centerContent('Hello world  !'));
+console.log(centerContent('Hello world  !'));
 
 // > output
 // ╭────────────────────────╮
@@ -59,7 +60,7 @@ The centered message if possible
 
 #### Defined in
 
-[logger.ts:35](https://github.com/permasoft-factory/termifier/blob/4ed0c10/packages/utilities/src/logger.ts#L35)
+[logger.ts:35](https://github.com/permasoft-factory/termifier/blob/62c46bd/packages/utilities/src/logger.ts#L35)
 
 ___
 
@@ -83,7 +84,31 @@ Checks if the given number is negative
 
 #### Defined in
 
-maths.ts:6
+[maths.ts:6](https://github.com/permasoft-factory/termifier/blob/62c46bd/packages/utilities/src/maths.ts#L6)
+
+___
+
+### isUndefined
+
+▸ **isUndefined**(`value`): `boolean`
+
+**`Description`**
+
+Checks if the given value is undefined
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `any` | Value to test |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+assert.ts:6
 
 ___
 
@@ -109,7 +134,7 @@ index.ts
 import { readFileAsync } from '@termifier/utilities';
 
 const fileContent = await readFileAsync('./file.txt');
-console.Log(fileContent);
+console.log(fileContent);
 
 // > output
 // ABCD1234
@@ -132,4 +157,4 @@ File content
 
 #### Defined in
 
-files.ts:30
+[files.ts:30](https://github.com/permasoft-factory/termifier/blob/62c46bd/packages/utilities/src/files.ts#L30)

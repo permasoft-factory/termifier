@@ -19,7 +19,7 @@ import { readFile } from 'node:fs';
  * import { readFileAsync } from '@termifier/utilities';
  *
  * const fileContent = await readFileAsync('./file.txt');
- * console.Log(fileContent);
+ * console.log(fileContent);
  *
  * // > output
  * // ABCD1234

@@ -13,7 +13,7 @@ import type { WriteStream } from 'node:tty';
  * ```typescript
  * import { centerContent } from '@termifier/utilities';
  *
- * console.Log('Hello world  !');
+ * console.log('Hello world  !');
  *
  * // > output
  * // ╭────────────────────────╮
@@ -22,7 +22,7 @@ import type { WriteStream } from 'node:tty';
  * // │                        │
  * // ╰────────────────────────╯
  *
- * console.Log(centerContent('Hello world  !'));
+ * console.log(centerContent('Hello world  !'));
  *
  * // > output
  * // ╭────────────────────────╮
