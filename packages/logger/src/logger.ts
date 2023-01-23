@@ -1,34 +1,16 @@
+import mergeObjects from 'merge-objects';
+
 import { addColor, hexColors } from './';
 import { isUndefined } from '@termifier/utilities';
 
-import { VError } from 'verror';
+import VError from 'verror';
 
 import type { HexColorString } from './';
 
 /**
- * Different parameters of the message to be stylized
+ *
  */
-export interface LoggerMessageOptions {
-	/**
-	 *
-	 */
-	level: LogLevel;
-
-	/**
-	 *
-	 */
-	colors: {
-		/**
-		 *
-		 */
-		date?: HexColorString;
-
-		/**
-		 *
-		 */
-		label?: HexColorString;
-	};
-}
+export type LogMethods = 'debug' | 'trace' | 'info' | 'warn' | 'error';
 
 /**
  *
@@ -68,12 +50,84 @@ export enum LogLevel {
 /**
  *
  */
-export type LogMethods = 'trace' | 'debug' | 'info' | 'warn' | 'error';
+export interface LoggerOptions {
+	colors?: LoggerColors;
+}
+
+/**
+ *
+ */
+export interface LoggerColors {
+	/**
+	 *
+	 */
+	debug?: HexColorString;
+
+	/**
+	 *
+	 */
+	info?: HexColorString;
+
+	/**
+	 *
+	 */
+	warn?: HexColorString;
+
+	/**
+	 *
+	 */
+	error?: HexColorString;
+}
+
+/**
+ * Different parameters of the message to be stylized
+ */
+export interface LogOptions {
+	/**
+	 *
+	 */
+	level: LogLevel;
+
+	/**
+	 *
+	 */
+	colors?: LogColors;
+}
+
+/**
+ *
+ */
+export interface LogColors {
+	/**
+	 *
+	 */
+	date?: HexColorString;
+
+	/**
+	 *
+	 */
+	label?: HexColorString;
+}
+
+/**
+ *
+ */
+export const defaultLoggerColors: LoggerColors = {
+	debug: hexColors.slateBlue,
+	info: hexColors.royalBlue,
+	warn: hexColors.darkOrange,
+	error: hexColors.crimson
+};
 
 /**
  * Make your logs more ethetic, easier
  */
 export class Logger {
+	/**
+	 *
+	 */
+	public loggerColors: LoggerColors;
+
 	/**
 	 *
 	 */
@@ -89,7 +143,27 @@ export class Logger {
 	/**
 	 *
 	 */
-	public constructor() {}
+	public constructor(options: LoggerOptions) {
+		this.loggerColors = isUndefined(options.colors) ? defaultLoggerColors : mergeObjects(options.colors as LoggerColors, defaultLoggerColors);
+	}
+
+	/**
+	 * @description
+	 * @param {string} message Message to write
+	 * @returns {void}
+	 */
+	public debug(message: string): void {
+		this.write('debug', message, { level: LogLevel.Debug, colors: { label: this.loggerColors.debug } });
+	}
+
+	/**
+	 * @description
+	 * @param {string} message Message to write
+	 * @returns {void}
+	 */
+	public trace(message: string): void {
+		this.write('>', message, { level: LogLevel.Trace });
+	}
 
 	/**
 	 * @description
@@ -97,7 +171,16 @@ export class Logger {
 	 * @returns {void}
 	 */
 	public info(message: string): void {
-		this.write('info', message, { level: LogLevel.Info, colors: { label: hexColors.royalBlue } });
+		this.write('info', message, { level: LogLevel.Info, colors: { label: this.loggerColors.info } });
+	}
+
+	/**
+	 * @description
+	 * @param {string} message Message to write
+	 * @returns {void}
+	 */
+	public warn(message: string): void {
+		this.write('warn', message, { level: LogLevel.Warn, colors: { label: this.loggerColors.warn } });
 	}
 
 	/**
@@ -107,22 +190,32 @@ export class Logger {
 	 * @returns {void}
 	 */
 	public error(message: string, ...params: any[]): void {
-		const error = new VError(message, ...params);
-		this.write('error', error.message, { level: LogLevel.Error, colors: { label: hexColors.crimson } });
+		const error: VError = new VError(message, ...params);
+		this.write('error', error.message, { level: LogLevel.Error, colors: { label: this.loggerColors.error } });
+	}
+
+	/**
+	 * @description
+	 * @param {string} message Message to write
+	 * @param {...any[]} params
+	 * @returns {void}
+	 */
+	public fatal(message: string, ...params: any[]): void {
+		const error: VError = new VError(message, ...params);
+		this.write('fatal', error.message, { level: LogLevel.Error, colors: { label: this.loggerColors.error } });
 	}
 
 	/**
 	 * @description Style a message to write in the terminal
 	 * @param {string} label Label to identify the message category
 	 * @param {string} message Message to write
-	 * @param {LoggerMessageOptions} options Message options
+	 * @param {LogOptions} options Message options
 	 * @returns {void}
 	 */
-	public write(label: string, message: string, options: LoggerMessageOptions): void {
-		const method = Logger.levels.get(options.level);
+	public write(label: string, message: string, options: LogOptions): void {
+		const method: LogMethods | undefined = Logger.levels.get(options.level);
 
 		if (isUndefined(method)) return;
-
 		console[method as LogMethods](this.buildMessage(label, message, options));
 	}
 
@@ -130,30 +223,30 @@ export class Logger {
 	 * @description
 	 * @param {string} label
 	 * @param {string} message
-	 * @param {LoggerMessageOptions} options
+	 * @param {LogOptions} options
 	 * @returns {string}
 	 */
-	public buildMessage(label: string, message: string, options: LoggerMessageOptions): string {
-		return [this.addDate(undefined, options.colors.date), this.addLabel(label, options.colors.label), message].join(' ');
+	public buildMessage(label: string, message: string, options: LogOptions): string {
+		return [this.addDate(), this.addLabel(label, options.colors?.label), message].join(' ');
 	}
 
 	/**
 	 * @description
-	 * @param {Date} date?
-	 * @param {HexColorString} textColor?
+	 * @param {Date | undefined} date?
+	 * @param {HexColorString} dateColor?
 	 * @returns {string}
 	 */
-	public addDate(date: Date = new Date(), textColor: HexColorString = hexColors.darkKhaki): string {
-		return `[${addColor(date.toDateString(), textColor)}]`;
+	public addDate(date: Date | undefined = new Date(), dateColor: HexColorString | undefined = hexColors.darkKhaki): string {
+		return `[${addColor(date.toDateString(), dateColor)}]`;
 	}
 
 	/**
 	 * @description
 	 * @param {string} name
-	 * @param {HexColorString} labelColor?
+	 * @param {HexColorString | undefined} labelColor?
 	 * @returns {string}
 	 */
-	public addLabel(name: string, labelColor?: HexColorString): string {
+	public addLabel(name: string, labelColor: HexColorString | undefined = hexColors.thistle): string {
 		return `[${addColor(name.toUpperCase(), labelColor)}]`;
 	}
 }

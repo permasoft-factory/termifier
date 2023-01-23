@@ -12,6 +12,7 @@ Make your logs more ethetic, easier
 
 ### Properties
 
+- [loggerColors](Logger.md#loggercolors)
 - [levels](Logger.md#levels)
 
 ### Methods
@@ -19,21 +20,41 @@ Make your logs more ethetic, easier
 - [addDate](Logger.md#adddate)
 - [addLabel](Logger.md#addlabel)
 - [buildMessage](Logger.md#buildmessage)
+- [debug](Logger.md#debug)
 - [error](Logger.md#error)
+- [fatal](Logger.md#fatal)
 - [info](Logger.md#info)
+- [trace](Logger.md#trace)
+- [warn](Logger.md#warn)
 - [write](Logger.md#write)
 
 ## Constructors
 
 ### constructor
 
-• **new Logger**()
+• **new Logger**(`options`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options` | [`LoggerOptions`](../interfaces/LoggerOptions.md) |
 
 #### Defined in
 
-[logger.ts:92](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L92)
+[logger.ts:146](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L146)
 
 ## Properties
+
+### loggerColors
+
+• **loggerColors**: [`LoggerColors`](../interfaces/LoggerColors.md)
+
+#### Defined in
+
+[logger.ts:129](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L129)
+
+___
 
 ### levels
 
@@ -41,13 +62,13 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:80](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L80)
+[logger.ts:134](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L134)
 
 ## Methods
 
 ### addDate
 
-▸ **addDate**(`date?`, `textColor?`): `string`
+▸ **addDate**(`date?`, `dateColor?`): `string`
 
 **`Description`**
 
@@ -55,8 +76,8 @@ Make your logs more ethetic, easier
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `date` | `Date` | `undefined` |
-| `textColor` | `string` | `hexColors.darkKhaki` |
+| `date` | `undefined` \| `Date` | `undefined` |
+| `dateColor` | `undefined` \| `string` | `hexColors.darkKhaki` |
 
 #### Returns
 
@@ -64,7 +85,7 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:146](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L146)
+[logger.ts:239](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L239)
 
 ___
 
@@ -76,10 +97,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `labelColor?` | `string` |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `name` | `string` | `undefined` |
+| `labelColor` | `undefined` \| `string` | `hexColors.thistle` |
 
 #### Returns
 
@@ -87,7 +108,7 @@ ___
 
 #### Defined in
 
-[logger.ts:156](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L156)
+[logger.ts:249](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L249)
 
 ___
 
@@ -103,7 +124,7 @@ ___
 | :------ | :------ |
 | `label` | `string` |
 | `message` | `string` |
-| `options` | [`LoggerMessageOptions`](../interfaces/LoggerMessageOptions.md) |
+| `options` | [`LogOptions`](../interfaces/LogOptions.md) |
 
 #### Returns
 
@@ -111,7 +132,29 @@ ___
 
 #### Defined in
 
-[logger.ts:136](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L136)
+[logger.ts:229](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L229)
+
+___
+
+### debug
+
+▸ **debug**(`message`): `void`
+
+**`Description`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message to write |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[logger.ts:155](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L155)
 
 ___
 
@@ -134,7 +177,30 @@ ___
 
 #### Defined in
 
-[logger.ts:109](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L109)
+[logger.ts:192](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L192)
+
+___
+
+### fatal
+
+▸ **fatal**(`message`, `...params`): `void`
+
+**`Description`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message to write |
+| `...params` | `any`[] |  |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[logger.ts:203](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L203)
 
 ___
 
@@ -156,7 +222,51 @@ ___
 
 #### Defined in
 
-[logger.ts:99](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L99)
+[logger.ts:173](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L173)
+
+___
+
+### trace
+
+▸ **trace**(`message`): `void`
+
+**`Description`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message to write |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[logger.ts:164](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L164)
+
+___
+
+### warn
+
+▸ **warn**(`message`): `void`
+
+**`Description`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message to write |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[logger.ts:182](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L182)
 
 ___
 
@@ -174,7 +284,7 @@ Style a message to write in the terminal
 | :------ | :------ | :------ |
 | `label` | `string` | Label to identify the message category |
 | `message` | `string` | Message to write |
-| `options` | [`LoggerMessageOptions`](../interfaces/LoggerMessageOptions.md) | Message options |
+| `options` | [`LogOptions`](../interfaces/LogOptions.md) | Message options |
 
 #### Returns
 
@@ -182,4 +292,4 @@ Style a message to write in the terminal
 
 #### Defined in
 
-[logger.ts:121](https://github.com/permasoft-factory/termifier/blob/31917b1/packages/logger/src/logger.ts#L121)
+[logger.ts:215](https://github.com/permasoft-factory/termifier/blob/f5e2df5/packages/logger/src/logger.ts#L215)
