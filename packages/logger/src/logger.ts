@@ -143,8 +143,8 @@ export class Logger {
 	/**
 	 *
 	 */
-	public constructor(options: LoggerOptions) {
-		this.loggerColors = isUndefined(options.colors) ? defaultLoggerColors : mergeObjects(options.colors as LoggerColors, defaultLoggerColors);
+	public constructor(options?: LoggerOptions) {
+		this.loggerColors = isUndefined(options?.colors) ? defaultLoggerColors : mergeObjects(options?.colors as LoggerColors, defaultLoggerColors);
 	}
 
 	/**

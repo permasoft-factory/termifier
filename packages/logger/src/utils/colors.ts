@@ -1,5 +1,7 @@
 import chalkPipe from 'chalk-pipe';
 
+import { isUndefined } from '@termifier/utilities';
+
 import type { Chalk, ColorSupport } from 'chalk';
 
 /**
@@ -55,7 +57,6 @@ export function pipeColor(style: HexColorString, customChalk?: ChalkInstance | u
  * ```
  */
 export function addColor(text: string, style?: HexColorString | undefined, customChalk?: ChalkInstance | undefined): string {
-	if (style !== 'string') return text;
-
-	return chalkPipe(style, customChalk)(text);
+	if (isUndefined(style)) return text;
+	return chalkPipe(style as string, customChalk)(text);
 }
