@@ -10,7 +10,6 @@
 - [Error](LogLevel.md#error)
 - [Fatal](LogLevel.md#fatal)
 - [Info](LogLevel.md#info)
-- [Trace](LogLevel.md#trace)
 - [Warn](LogLevel.md#warn)
 
 ## Enumeration Members
@@ -21,54 +20,44 @@
 
 #### Defined in
 
-[logger.ts:22](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L22)
+[logger.ts:22](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L22)
 
 ___
 
 ### Error
 
-• **Error** = ``50``
+• **Error** = ``40``
 
 #### Defined in
 
-[logger.ts:42](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L42)
+[logger.ts:37](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L37)
 
 ___
 
 ### Fatal
 
-• **Fatal** = ``60``
+• **Fatal** = ``50``
 
 #### Defined in
 
-[logger.ts:47](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L47)
+[logger.ts:42](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L42)
 
 ___
 
 ### Info
 
-• **Info** = ``30``
+• **Info** = ``20``
 
 #### Defined in
 
-[logger.ts:32](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L32)
-
-___
-
-### Trace
-
-• **Trace** = ``20``
-
-#### Defined in
-
-[logger.ts:27](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L27)
+[logger.ts:27](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L27)
 
 ___
 
 ### Warn
 
-• **Warn** = ``40``
+• **Warn** = ``30``
 
 #### Defined in
 
-[logger.ts:37](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L37)
+[logger.ts:32](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L32)

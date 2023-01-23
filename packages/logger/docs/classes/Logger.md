@@ -24,7 +24,6 @@ Make your logs more ethetic, easier
 - [error](Logger.md#error)
 - [fatal](Logger.md#fatal)
 - [info](Logger.md#info)
-- [trace](Logger.md#trace)
 - [warn](Logger.md#warn)
 - [write](Logger.md#write)
 
@@ -42,7 +41,7 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:146](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L146)
+[logger.ts:140](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L140)
 
 ## Properties
 
@@ -52,7 +51,7 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:129](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L129)
+[logger.ts:124](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L124)
 
 ___
 
@@ -62,7 +61,7 @@ ___
 
 #### Defined in
 
-[logger.ts:134](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L134)
+[logger.ts:129](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L129)
 
 ## Methods
 
@@ -85,7 +84,7 @@ ___
 
 #### Defined in
 
-[logger.ts:239](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L239)
+[logger.ts:224](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L224)
 
 ___
 
@@ -108,7 +107,7 @@ ___
 
 #### Defined in
 
-[logger.ts:249](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L249)
+[logger.ts:234](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L234)
 
 ___
 
@@ -132,7 +131,7 @@ ___
 
 #### Defined in
 
-[logger.ts:229](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L229)
+[logger.ts:214](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L214)
 
 ___
 
@@ -154,7 +153,7 @@ ___
 
 #### Defined in
 
-[logger.ts:155](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L155)
+[logger.ts:149](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L149)
 
 ___
 
@@ -177,7 +176,7 @@ ___
 
 #### Defined in
 
-[logger.ts:192](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L192)
+[logger.ts:177](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L177)
 
 ___
 
@@ -200,7 +199,7 @@ ___
 
 #### Defined in
 
-[logger.ts:203](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L203)
+[logger.ts:188](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L188)
 
 ___
 
@@ -222,29 +221,7 @@ ___
 
 #### Defined in
 
-[logger.ts:173](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L173)
-
-___
-
-### trace
-
-▸ **trace**(`message`): `void`
-
-**`Description`**
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `message` | `string` | Message to write |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[logger.ts:164](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L164)
+[logger.ts:158](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L158)
 
 ___
 
@@ -266,7 +243,7 @@ ___
 
 #### Defined in
 
-[logger.ts:182](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L182)
+[logger.ts:167](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L167)
 
 ___
 
@@ -292,4 +269,4 @@ Style a message to write in the terminal
 
 #### Defined in
 
-[logger.ts:215](https://github.com/permasoft-factory/termifier/blob/3a2c8f0/packages/logger/src/logger.ts#L215)
+[logger.ts:200](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L200)

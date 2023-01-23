@@ -10,7 +10,7 @@ import type { HexColorString } from './';
 /**
  *
  */
-export type LogMethods = 'debug' | 'trace' | 'info' | 'warn' | 'error';
+export type LogMethods = 'debug' | 'info' | 'warn' | 'error';
 
 /**
  *
@@ -24,27 +24,22 @@ export enum LogLevel {
 	/**
 	 *
 	 */
-	Trace = 20,
+	Info = 20,
 
 	/**
 	 *
 	 */
-	Info = 30,
+	Warn = 30,
 
 	/**
 	 *
 	 */
-	Warn = 40,
+	Error = 40,
 
 	/**
 	 *
 	 */
-	Error = 50,
-
-	/**
-	 *
-	 */
-	Fatal = 60
+	Fatal = 50
 }
 
 /**
@@ -133,7 +128,6 @@ export class Logger {
 	 */
 	static levels = new Map<LogLevel, LogMethods>([
 		[LogLevel.Debug, 'debug'],
-		[LogLevel.Trace, 'trace'],
 		[LogLevel.Info, 'info'],
 		[LogLevel.Warn, 'warn'],
 		[LogLevel.Error, 'error'],
@@ -154,15 +148,6 @@ export class Logger {
 	 */
 	public debug(message: string): void {
 		this.write('debug', message, { level: LogLevel.Debug, colors: { label: this.loggerColors.debug } });
-	}
-
-	/**
-	 * @description
-	 * @param {string} message Message to write
-	 * @returns {void}
-	 */
-	public trace(message: string): void {
-		this.write('>', message, { level: LogLevel.Trace });
 	}
 
 	/**
