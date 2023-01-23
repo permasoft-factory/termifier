@@ -2,7 +2,7 @@
     "name": "@termifier/utilities",
     "author": "permasoft-factory",
     "description": "A collection of useful functions for Termifier",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",

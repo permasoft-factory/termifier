@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[logger.ts:22](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L22)
+[logger.ts:22](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L22)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[logger.ts:37](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L37)
+[logger.ts:37](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L37)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[logger.ts:42](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L42)
+[logger.ts:42](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L42)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[logger.ts:27](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L27)
+[logger.ts:27](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L27)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[logger.ts:32](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L32)
+[logger.ts:32](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L32)

@@ -19,7 +19,7 @@ Different parameters of the message to be stylized
 
 #### Defined in
 
-[logger.ts:89](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L89)
+[logger.ts:89](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L89)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[logger.ts:84](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L84)
+[logger.ts:84](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L84)

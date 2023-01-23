@@ -45,7 +45,7 @@ A Chalk instance
 
 #### Defined in
 
-[utils/colors.ts:15](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/utils/colors.ts#L15)
+[utils/colors.ts:15](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/utils/colors.ts#L15)
 
 ___
 
@@ -57,7 +57,7 @@ HEX color
 
 #### Defined in
 
-[utils/colors.ts:10](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/utils/colors.ts#L10)
+[utils/colors.ts:10](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/utils/colors.ts#L10)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[logger.ts:13](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L13)
+[logger.ts:13](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L13)
 
 ## Variables
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[logger.ts:110](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/logger.ts#L110)
+[logger.ts:110](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L110)
 
 ___
 
@@ -100,7 +100,7 @@ See https://htmlcolorcodes.com/color-names/
 
 #### Defined in
 
-[utils/colors.ts:20](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/utils/colors.ts#L20)
+[utils/colors.ts:20](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/utils/colors.ts#L20)
 
 ## Functions
 
@@ -136,7 +136,7 @@ Stylized text
 
 #### Defined in
 
-[utils/colors.ts:59](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/utils/colors.ts#L59)
+[utils/colors.ts:59](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/utils/colors.ts#L59)
 
 ___
 
@@ -172,4 +172,4 @@ A Chalk instance
 
 #### Defined in
 
-[utils/colors.ts:42](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/logger/src/utils/colors.ts#L42)
+[utils/colors.ts:42](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/utils/colors.ts#L42)

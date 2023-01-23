@@ -14,7 +14,6 @@ import type { WriteStream } from 'node:tty';
  * import { centerContent } from '@termifier/utilities';
  *
  * console.log('Hello world  !');
- *
  * // > output
  * // ╭────────────────────────╮
  * // │                        │
@@ -23,7 +22,6 @@ import type { WriteStream } from 'node:tty';
  * // ╰────────────────────────╯
  *
  * console.log(centerContent('Hello world  !'));
- *
  * // > output
  * // ╭────────────────────────╮
  * // │                        │
@@ -31,13 +29,40 @@ import type { WriteStream } from 'node:tty';
  * // │                        │
  * // ╰────────────────────────╯
  * ```
+ *
+ * console.log('Hello world  !\nFrom NodeJs');
+ * // > output
+ * // ╭────────────────────────╮
+ * // │                        │
+ * // │ Hello world  !         │
+ * // │ From NodeJs            │
+ * // │                        │
+ * // ╰────────────────────────╯
+ *
+ * console.log(centerContent('Hello world  !\nFrom NodeJs'));
+ * // > output
+ * // ╭────────────────────────╮
+ * // │                        │
+ * // │     Hello world  !     │
+ * // │      From NodeJs       │
+ * // │                        │
+ * // ╰────────────────────────╯
+ * ```
  */
 export function centerContent(message: string, stdout: WriteStream = process.stdout): string {
+	const splittedMessage: string[] = message.split('\n');
 	const consoleColumns: number = stdout.columns;
-	const messageLength: number = stripAinsi(message).length;
 
-	const centerLength = consoleColumns / 2 - messageLength / 2;
-	const padding = ' '.repeat(centerLength);
+	const centeredMessage: string[] = [];
 
-	return isNegative(centerLength) ? message : padding + message;
+	splittedMessage.forEach((line) => {
+		const lineLength: number = stripAinsi(line).length;
+
+		const centerLength = consoleColumns / 2 - lineLength / 2;
+		const padding = ' '.repeat(centerLength);
+
+		centeredMessage.push(isNegative(centerLength) ? line : padding + line);
+	});
+
+	return centeredMessage.join('\n');
 }

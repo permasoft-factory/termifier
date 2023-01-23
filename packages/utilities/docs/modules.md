@@ -27,7 +27,6 @@ Content to center in the writable side of a TTY
 import { centerContent } from '@termifier/utilities';
 
 console.log('Hello world  !');
-
 // > output
 // ╭────────────────────────╮
 // │                        │
@@ -36,11 +35,29 @@ console.log('Hello world  !');
 // ╰────────────────────────╯
 
 console.log(centerContent('Hello world  !'));
-
 // > output
 // ╭────────────────────────╮
 // │                        │
 // │     Hello world  !     │
+// │                        │
+// ╰────────────────────────╯
+```
+
+console.log('Hello world  !\nFrom NodeJs');
+// > output
+// ╭────────────────────────╮
+// │                        │
+// │ Hello world  !         │
+// │ From NodeJs            │
+// │                        │
+// ╰────────────────────────╯
+
+console.log(centerContent('Hello world  !\nFrom NodeJs'));
+// > output
+// ╭────────────────────────╮
+// │                        │
+// │     Hello world  !     │
+// │      From NodeJs       │
 // │                        │
 // ╰────────────────────────╯
 ```
@@ -60,7 +77,7 @@ The centered message if possible
 
 #### Defined in
 
-[logger.ts:35](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/utilities/src/logger.ts#L35)
+[logger.ts:52](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/logger.ts#L52)
 
 ___
 
@@ -84,7 +101,7 @@ Checks if the given number is negative
 
 #### Defined in
 
-[maths.ts:6](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/utilities/src/maths.ts#L6)
+[maths.ts:6](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/maths.ts#L6)
 
 ___
 
@@ -108,7 +125,7 @@ Checks if the given value is undefined
 
 #### Defined in
 
-[assert.ts:6](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/utilities/src/assert.ts#L6)
+[assert.ts:6](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/assert.ts#L6)
 
 ___
 
@@ -157,4 +174,4 @@ File content
 
 #### Defined in
 
-[files.ts:30](https://github.com/permasoft-factory/termifier/blob/39cb361/packages/utilities/src/files.ts#L30)
+[files.ts:30](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/files.ts#L30)
