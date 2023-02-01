@@ -7,6 +7,7 @@
 ### Properties
 
 - [colors](LoggerOptions.md#colors)
+- [dateFormat](LoggerOptions.md#dateformat)
 
 ## Properties
 
@@ -16,4 +17,14 @@
 
 #### Defined in
 
-[logger.ts:49](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/logger/src/logger.ts#L49)
+[logger.ts:51](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L51)
+
+___
+
+### dateFormat
+
+• `Optional` **dateFormat**: `string`
+
+#### Defined in
+
+[logger.ts:50](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L50)

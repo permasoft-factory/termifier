@@ -1,4 +1,5 @@
 import mergeObjects from 'merge-objects';
+import moment from 'moment';
 
 import { addColor, hexColors } from './';
 import { isUndefined } from '@termifier/utilities';
@@ -46,6 +47,7 @@ export enum LogLevel {
  *
  */
 export interface LoggerOptions {
+	dateFormat?: string;
 	colors?: LoggerColors;
 }
 
@@ -121,12 +123,17 @@ export class Logger {
 	/**
 	 *
 	 */
+	public dateFormat: string;
+
+	/**
+	 *
+	 */
 	public loggerColors: LoggerColors;
 
 	/**
 	 *
 	 */
-	static levels = new Map<LogLevel, LogMethods>([
+	private static levels = new Map<LogLevel, LogMethods>([
 		[LogLevel.Debug, 'debug'],
 		[LogLevel.Info, 'info'],
 		[LogLevel.Warn, 'warn'],
@@ -138,6 +145,7 @@ export class Logger {
 	 *
 	 */
 	public constructor(options?: LoggerOptions) {
+		this.dateFormat = isUndefined(options?.dateFormat) ? 'L - LTS' : (options?.dateFormat as string);
 		this.loggerColors = isUndefined(options?.colors) ? defaultLoggerColors : mergeObjects(options?.colors as LoggerColors, defaultLoggerColors);
 	}
 
@@ -217,12 +225,12 @@ export class Logger {
 
 	/**
 	 * @description
-	 * @param {Date | undefined} date?
+	 * @param {string | undefined} dateFormat?
 	 * @param {HexColorString} dateColor?
 	 * @returns {string}
 	 */
-	public addDate(date: Date | undefined = new Date(), dateColor: HexColorString | undefined = hexColors.darkKhaki): string {
-		return `[${addColor(date.toDateString(), dateColor)}]`;
+	public addDate(dateFormat: string | undefined = this.dateFormat, dateColor: HexColorString | undefined = hexColors.darkKhaki): string {
+		return `[${addColor(moment().format(dateFormat), dateColor)}]`;
 	}
 
 	/**
