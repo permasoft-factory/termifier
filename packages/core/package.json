@@ -2,8 +2,13 @@
     "name": "@termifier/core",
     "author": "permasoft-factory",
     "description": "Create interactive applications in the terminal more easily",
-    "version": "1.0.1",
+    "private": false,
+    "version": "1.0.0",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/permasoft-factory/termifier.git"
+    },
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
@@ -23,7 +28,7 @@
     "dependencies": {
         "@termifier/logger": "workspace:logger",
         "@termifier/utilities": "workspace:utilities",
-        "log-update": "4.0.0"
+        "ansi-escapes": "4.3.2"
     },
     "devDependencies": {
         "@sapphire/ts-config": "^3.3.4",

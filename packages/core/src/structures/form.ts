@@ -1,11 +1,9 @@
-import logUpdate from 'log-update';
-
 import type { SpacerBox, Box } from './boxs';
 
 /**
- * 
+ *
  */
-export type Boxs = SpacerBox | Box;
+export type AnyBox = SpacerBox | Box;
 
 /**
  *
@@ -14,27 +12,21 @@ export class Form {
 	/**
 	 *
 	 */
-	boxs: { id: number; box:  SpacerBox | Box }[];
-
-	/**
-	 * 
-	 */
-	renderer: logUpdate.LogUpdate & { readonly stderr: logUpdate.LogUpdate; readonly create: (stream: NodeJS.WritableStream, options?: logUpdate.Options | undefined) => logUpdate.LogUpdate };
+	public content: { id: number; box: AnyBox }[];
 
 	/**
 	 *
 	 */
 	public constructor() {
-		this.boxs = [];
-		this.renderer = logUpdate;
+		this.content = [];
 	}
 
 	/**
 	 *
 	 * @param box
 	 */
-	public addBox(box: Boxs) {
-		this.boxs.push({ id: this.boxs.length, box: box });
+	public addBox(box: AnyBox) {
+		this.content.push({ id: this.content.length, box: box });
 	}
 
 	/**
@@ -43,7 +35,7 @@ export class Form {
 	 */
 	/*
 	public removeBox(id: number) {
-		this.boxs.slice(id, id);
+		this.content.slice(id, id);
 	}
 	*/
 
@@ -51,11 +43,10 @@ export class Form {
 	 *
 	 */
 	public render() {
-		console.clear();
-
-		const form: any[] = [];
-		this.boxs.forEach(({ box }) => form.push(box.content.join('\n')));
-
-		this.renderer(form.join('\n'));
+		this.content.forEach(({ box }) => {
+			box.content.forEach((line) => {
+				console.log(line);
+			});
+		});
 	}
 }

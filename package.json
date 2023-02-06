@@ -1,7 +1,12 @@
 {
 	"name": "termifier",
 	"author": "permasoft-factory",
+	"private": true,
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/permasoft-factory/termifier.git"
+	},
 	"scripts": {
 		"format": "prettier --config \"scripts/prettier.config.js\" --write \"{packages,scripts}/**/*.{js,ts}\"",
 		"build": "turbo run build",

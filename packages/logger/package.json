@@ -2,8 +2,13 @@
     "name": "@termifier/logger",
     "author": "permasoft-factory",
     "description": "Make your logs more ethetic, easier",
-    "version": "1.0.1",
+	"private": false,
+    "version": "1.0.0",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/permasoft-factory/termifier.git"
+    },
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",

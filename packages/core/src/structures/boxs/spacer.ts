@@ -1,11 +1,11 @@
 /**
- * 
+ *
  */
 export interface SpacerBoxOptions {
 	/**
-	 * 
+	 *
 	 */
-	space: number
+	space: number;
 }
 
 /**

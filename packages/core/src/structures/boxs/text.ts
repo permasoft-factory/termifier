@@ -1,9 +1,7 @@
 /**
- * 
+ *
  */
-export interface TextBoxOptions {
-	
-}
+export interface TextBoxOptions {}
 
 /**
  *
