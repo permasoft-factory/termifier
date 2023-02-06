@@ -1,6 +1,6 @@
 <div align="center">
 
-## @termifier/logger
+## @termifier/turbo
 **Make your logs more ethetic, easier ⭐**
 
 </div>

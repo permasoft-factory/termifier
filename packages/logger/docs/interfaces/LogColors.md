@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[logger.ts:101](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L101)
+[logger.ts:101](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L101)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[logger.ts:106](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L106)
+[logger.ts:106](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L106)

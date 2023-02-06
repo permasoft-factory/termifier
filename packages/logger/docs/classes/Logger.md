@@ -42,7 +42,7 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:147](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L147)
+[logger.ts:147](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L147)
 
 ## Properties
 
@@ -52,7 +52,7 @@ Make your logs more ethetic, easier
 
 #### Defined in
 
-[logger.ts:126](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L126)
+[logger.ts:126](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L126)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[logger.ts:131](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L131)
+[logger.ts:131](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L131)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[logger.ts:136](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L136)
+[logger.ts:136](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L136)
 
 ## Methods
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[logger.ts:232](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L232)
+[logger.ts:232](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L232)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[logger.ts:242](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L242)
+[logger.ts:242](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L242)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[logger.ts:222](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L222)
+[logger.ts:222](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L222)
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-[logger.ts:157](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L157)
+[logger.ts:157](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L157)
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 #### Defined in
 
-[logger.ts:185](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L185)
+[logger.ts:185](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L185)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[logger.ts:196](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L196)
+[logger.ts:196](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L196)
 
 ___
 
@@ -232,7 +232,7 @@ ___
 
 #### Defined in
 
-[logger.ts:166](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L166)
+[logger.ts:166](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L166)
 
 ___
 
@@ -254,7 +254,7 @@ ___
 
 #### Defined in
 
-[logger.ts:175](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L175)
+[logger.ts:175](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L175)
 
 ___
 
@@ -280,4 +280,4 @@ Style a message to write in the terminal
 
 #### Defined in
 
-[logger.ts:208](https://github.com/permasoft-factory/termifier/blob/388d243/packages/logger/src/logger.ts#L208)
+[logger.ts:208](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/logger/src/logger.ts#L208)

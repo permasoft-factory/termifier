@@ -77,7 +77,7 @@ The centered message if possible
 
 #### Defined in
 
-[logger.ts:52](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/logger.ts#L52)
+[logger.ts:52](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/utilities/src/logger.ts#L52)
 
 ___
 
@@ -101,7 +101,7 @@ Checks if the given number is negative
 
 #### Defined in
 
-[maths.ts:6](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/maths.ts#L6)
+[maths.ts:6](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/utilities/src/maths.ts#L6)
 
 ___
 
@@ -125,7 +125,7 @@ Checks if the given value is undefined
 
 #### Defined in
 
-[assert.ts:6](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/assert.ts#L6)
+[assert.ts:6](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/utilities/src/assert.ts#L6)
 
 ___
 
@@ -174,4 +174,4 @@ File content
 
 #### Defined in
 
-[files.ts:30](https://github.com/permasoft-factory/termifier/blob/8b62833/packages/utilities/src/files.ts#L30)
+[files.ts:30](https://github.com/permasoft-factory/termifier/blob/0c2382e/packages/utilities/src/files.ts#L30)
