@@ -53,7 +53,7 @@ export function centerContent(message: string, stdout: WriteStream = process.std
 	const splittedMessage: string[] = message.split('\n');
 	const consoleColumns: number = stdout.columns;
 
-	const centeredMessage: string[] = [];
+	const centeredLines: string[] = [];
 
 	splittedMessage.forEach((line) => {
 		const lineLength: number = stripAinsi(line).length;
@@ -61,8 +61,8 @@ export function centerContent(message: string, stdout: WriteStream = process.std
 		const centerLength = consoleColumns / 2 - lineLength / 2;
 		const padding = ' '.repeat(centerLength);
 
-		centeredMessage.push(isNegative(centerLength) ? line : padding + line);
+		centeredLines.push(isNegative(centerLength) ? line : padding + line);
 	});
 
-	return centeredMessage.join('\n');
+	return centeredLines.join('\n');
 }

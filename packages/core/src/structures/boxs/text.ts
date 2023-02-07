@@ -1,28 +1,31 @@
-/**
- *
- */
-export interface TextBoxOptions {}
+import { BaseBox } from './base';
+import type { BaseBoxOptions } from './base';
 
 /**
  *
  */
-export class Box {
-	/***
+export interface TextBoxOptions extends BaseBoxOptions {}
+
+/**
+ *
+ */
+export class TextBox extends BaseBox {
+	/**
 	 *
 	 */
-	public content: any[];
+	public declare boxOptions: TextBoxOptions | undefined;
 
 	/**
 	 *
 	 */
-	public constructor() {
-		this.content = [];
+	public constructor(options?: TextBoxOptions) {
+		super(options);
 	}
 
 	/**
 	 *
 	 */
-	public addContent(content: any) {
+	public addContent(content: any): void {
 		this.content.push(content);
 	}
 }

@@ -1,7 +1,10 @@
+import { BaseBox } from './base';
+import type { BaseBoxOptions } from './base';
+
 /**
  *
  */
-export interface SpacerBoxOptions {
+export interface SpacerBoxOptions extends BaseBoxOptions {
 	/**
 	 *
 	 */
@@ -11,18 +14,31 @@ export interface SpacerBoxOptions {
 /**
  *
  */
-export class SpacerBox {
-	/***
+export class SpacerBox extends BaseBox {
+	/**
 	 *
 	 */
-	public content: any[];
+	public declare boxOptions: SpacerBoxOptions | undefined;
+
+	/**
+	 *
+	 */
+	public spacer: string;
 
 	/**
 	 *
 	 */
 	public constructor(options: SpacerBoxOptions) {
-		this.content = [];
+		super(options);
 
-		this.content.push('\n'.repeat(options.space));
+		this.spacer = '\n'.repeat(this.boxOptions?.space as number);
+		this.content.push(this.spacer);
+	}
+
+	/**
+	 *
+	 */
+	public getSpacer(): string {
+		return this.spacer;
 	}
 }

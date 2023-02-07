@@ -1,9 +1,9 @@
-import type { SpacerBox, Box } from './boxs';
+import type { SpacerBox, TextBox } from './boxs';
 
 /**
  *
  */
-export type AnyBox = SpacerBox | Box;
+export type AnyBox = SpacerBox | TextBox;
 
 /**
  *
