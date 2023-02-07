@@ -34,11 +34,4 @@ export class SpacerBox extends BaseBox {
 		this.spacer = '\n'.repeat(this.boxOptions?.space as number);
 		this.content.push(this.spacer);
 	}
-
-	/**
-	 *
-	 */
-	public getSpacer(): string {
-		return this.spacer;
-	}
 }
