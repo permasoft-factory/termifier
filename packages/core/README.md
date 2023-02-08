@@ -1,7 +1,7 @@
 <div align="center">
 
-## @termifier/turbo
-**Make your logs more ethetic, easier ⭐**
+## @termifier/core
+**Create interactive applications in the terminal more easily**
 
 </div>
 

@@ -2,6 +2,8 @@
 
 # Class: Form
 
+Form class
+
 ## Table of contents
 
 ### Constructors
@@ -10,8 +12,7 @@
 
 ### Properties
 
-- [boxs](Form.md#boxs)
-- [renderer](Form.md#renderer)
+- [content](Form.md#content)
 
 ### Methods
 
@@ -26,27 +27,19 @@
 
 #### Defined in
 
-structures/form.ts:27
+ui/form.ts:12
 
 ## Properties
 
-### boxs
+### content
 
-• **boxs**: { `box`: [`SpacerBox`](SpacerBox.md) \| [`Box`](Box.md) ; `id`: `number`  }[]
+• **content**: { `box`: [`AnyBox`](../modules.md#anybox) ; `id`: `number`  }[]
 
-#### Defined in
-
-structures/form.ts:17
-
-___
-
-### renderer
-
-• **renderer**: `LogUpdate` & { `create`: (`stream`: `WritableStream`, `options?`: `Options`) => `LogUpdate` ; `stderr`: `LogUpdate`  }
+Content of the form, it is a array containing each boxes which composes it
 
 #### Defined in
 
-structures/form.ts:22
+ui/form.ts:10
 
 ## Methods
 
@@ -54,11 +47,15 @@ structures/form.ts:22
 
 ▸ **addBox**(`box`): `void`
 
+**`Description`**
+
+Add any pre-made box to the form
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `box` | [`Boxs`](../modules.md#boxs) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `box` | [`AnyBox`](../modules.md#anybox) | Any pre-made boxes |
 
 #### Returns
 
@@ -66,7 +63,7 @@ structures/form.ts:22
 
 #### Defined in
 
-structures/form.ts:36
+ui/form.ts:21
 
 ___
 
@@ -74,10 +71,14 @@ ___
 
 ▸ **render**(): `void`
 
+**`Description`**
+
+Render the form in the terminal
+
 #### Returns
 
 `void`
 
 #### Defined in
 
-structures/form.ts:53
+ui/form.ts:34

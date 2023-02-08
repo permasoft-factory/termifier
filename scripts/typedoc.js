@@ -24,7 +24,7 @@ function getTasks() {
 			'--plugin',
 			'typedoc-plugin-markdown',
 			'--tsconfig',
-			resolvePath(packageFolder, 'tsconfig.json'),
+			resolvePath(packageFolder, 'tsconfig.doc.json'),
 			'--out',
 			docsFolder,
 			resolvePath(srcFolder, 'index.ts')

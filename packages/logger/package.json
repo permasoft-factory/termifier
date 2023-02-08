@@ -2,7 +2,7 @@
     "name": "@termifier/logger",
     "author": "permasoft-factory",
     "description": "Make your logs more ethetic, easier",
-	"private": false,
+    "private": false,
     "version": "1.0.0",
     "license": "MIT",
     "repository": {
@@ -26,7 +26,7 @@
         "build": "tsup"
     },
     "dependencies": {
-        "@termifier/utilities": "workspace:utilities",
+        "@termifier/utilities": "workspace:^1.0.0",
         "chalk-pipe": "4.0.0",
         "merge-objects": "^1.0.5",
         "moment": "^2.29.4",
@@ -38,7 +38,7 @@
         "@types/merge-objects": "^1.0.0",
         "@types/verror": "^1.10.6",
         "chalk": "2.4.2",
-        "tsup": "^6.5.0",
-        "typescript": "^4.9.4"
+        "tsup": "^6.6.0",
+        "typescript": "^4.9.5"
     }
 }

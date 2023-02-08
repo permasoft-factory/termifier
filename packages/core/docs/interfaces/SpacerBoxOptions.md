@@ -2,6 +2,8 @@
 
 # Interface: SpacerBoxOptions
 
+Spacer box options
+
 ## Table of contents
 
 ### Properties
@@ -14,6 +16,8 @@
 
 • **space**: `number`
 
+Spacing length
+
 #### Defined in
 
-structures/boxs/spacer.ts:8
+ui/boxs/spacer.ts:10

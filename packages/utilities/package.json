@@ -2,7 +2,7 @@
     "name": "@termifier/utilities",
     "author": "permasoft-factory",
     "description": "A collection of useful functions for Termifier",
-	"private": false,
+    "private": false,
     "version": "1.0.0",
     "license": "MIT",
     "repository": {
@@ -30,7 +30,7 @@
     },
     "devDependencies": {
         "@sapphire/ts-config": "^3.3.4",
-        "tsup": "^6.5.0",
-        "typescript": "^4.9.4"
+        "tsup": "^6.6.0",
+        "typescript": "^4.9.5"
     }
 }
