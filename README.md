@@ -1,6 +1,6 @@
 <div align="center">
 
-## Termifier
+# Termifier
 
 A module to create interactive applications in the terminal
 
@@ -56,7 +56,11 @@ export const Body = async (): Promise<TextBox> => {
 
 Do not forget to export the files with the `index.ts`. We have 2 boxes that can be distinguished separately like this
 
-<div align="center"><img src="./assets/images/header-body-boxs-representation.png"><br><br></div>
+<div align="center">
+<img src="./assets/images/diagrams/header-body-boxes.png" alt="Header and body boxes representation">
+
+Made with [diagrameditor](https://www.diagrameditor.com/)
+<br><br></div>
 
 Now we have to create a shape with our boxes. It will be displayed when the application launches. To do this, we will create the file `header.ts` in the folder `forms`:
 
@@ -79,7 +83,11 @@ export const MainForm = async (): Promise<Form> => {
 
 We have a form that can be distinguished like this
 
-<div align="center"><img src="./assets/images/main-form-representation.png"><br><br></div>
+<div align="center">
+<img src="./assets/images/diagrams/main-form.png" alt="Main form representation">
+
+Made with [diagrameditor](https://www.diagrameditor.com/)
+<br><br></div>
 
 We have everything ready for our application to have style! The last step is to create the main file of the application, which will be executed. To do this, we will create the file `app.ts` in the folder `src`:
 
@@ -101,4 +109,12 @@ const app = new App({ name: 'A simple exemple' });
 
 We have now the application, that can be distinguished like this
 
-<div align="center"><img src="./assets/images/rendering-loop-representation.png"><br><br></div>
+<div align="center">
+<img src="./assets/images/diagrams/rendering-loop.png" alt="Rendering loop representation">
+
+Made with [diagrameditor](https://www.diagrameditor.com/)
+<br><br></div>
+
+## Exemples design made with termifier
+
+<div align="center"><img src="./assets/images/designs/youtube-downloader.png"></div>
