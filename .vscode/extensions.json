@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "ms-vscode.powershell"
+        "bungcip.better-toml",
+        "rust-lang.rust-analyzer",
+        "dustypomerleau.rust-syntax"
     ]
 }

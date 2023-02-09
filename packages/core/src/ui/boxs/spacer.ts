@@ -30,6 +30,7 @@ export class SpacerBox extends BaseBox {
 	public constructor(options: SpacerBoxOptions) {
 		super();
 
+		this.type = 'spacer';
 		this.options = options;
 
 		this.space = '\n'.repeat(this.options.space);

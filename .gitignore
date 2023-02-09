@@ -4,8 +4,11 @@ node_modules
 # Turbo cache
 .turbo
 
-# Compiled code
+# Compiled typescript code
 dist
+
+# Compiled rust code
+target
 
 # Typedoc
 .nojekyll

@@ -6,6 +6,18 @@ A module to create interactive applications in the terminal
 
 </div>
 
+## Made with Typescript & Rust
+
+## New 1.1.0! 🎆
+
+- Changes some configurations
+- Update rendering loop diagram
+- Adding a Rust environment to the project
+- Adding a keylogger for menu interactions
+- Add menu box
+- Add box type
+- Update doc
+
 ## Get started
 
 To create an application with Termifier, you must start with a good management of the files and the project root. It is easy to organize these files because each class has its function and can be sorted by category
@@ -23,17 +35,19 @@ src/
 To start, we can define our first box. To do this, we will create the file `header.ts` in the folder `components`:
 
 ```typescript
-// components/header.ts
+// src/components/header.ts
 
 import { TextBox } from '@termifier/core';
 
 import { addColor } from '@termifier/logger';
 import { centerContent, readFileAsync } from '@termifier/utilities';
 
+const someAsciiBannerFile = "path/to/file";
+
 export const Header = async (): Promise<TextBox> => {
 	const textBox = new TextBox();
 
-	textBox.addContent(centerContent(await readFileAsync(asciiBanner)));
+	textBox.addContent(centerContent(await readFileAsync(someAsciiBannerFile)));
 	textBox.addContent(`\nPretty ${addColor('cool', 'yellow.bold')} uh?`);
 
 	return textBox;
@@ -43,7 +57,12 @@ export const Header = async (): Promise<TextBox> => {
 You can also create a second box, you can then recreate for example a `body.ts` file in the `components` folder:
 
 ```typescript
-// components/body.ts
+// src/components/body.ts
+
+import { TextBox } from '@termifier/core';
+
+import { addColor } from '@termifier/logger';
+import { centerContent } from '@termifier/utilities';
 
 export const Body = async (): Promise<TextBox> => {
 	const textBox = new TextBox();
@@ -62,10 +81,10 @@ Do not forget to export the files with the `index.ts`. We have 2 boxes that can 
 Made with [diagrameditor](https://www.diagrameditor.com/)
 <br><br></div>
 
-Now we have to create a shape with our boxes. It will be displayed when the application launches. To do this, we will create the file `header.ts` in the folder `forms`:
+Now we have to create a form with our boxes. It will be displayed on the terminal. To do this, we will create the file `header.ts` in the folder `forms`:
 
 ```typescript
-// forms/main.ts
+// src/forms/main.ts
 
 import { Form, SpacerBox } from '@termifier/core';
 import { Header, Body } from '../components';

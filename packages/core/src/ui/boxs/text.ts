@@ -6,6 +6,8 @@ import { BaseBox } from '../box';
 export class TextBox extends BaseBox {
 	public constructor() {
 		super();
+
+		this.type = 'text';
 	}
 
 	/**

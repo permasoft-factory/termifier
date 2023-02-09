@@ -34,6 +34,7 @@ importers:
 
   packages/core:
     specifiers:
+      '@napi-rs/cli': ^2.14.7
       '@sapphire/ts-config': ^3.3.4
       '@termifier/logger': workspace:^1.0.0
       '@termifier/utilities': workspace:^1.0.0
@@ -45,6 +46,7 @@ importers:
       '@termifier/utilities': link:../utilities
       ansi-escapes: 4.3.2
     devDependencies:
+      '@napi-rs/cli': 2.14.7
       '@sapphire/ts-config': 3.3.4
       tsup: 6.6.0_typescript@4.9.5
       typescript: 4.9.5
@@ -290,6 +292,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@napi-rs/cli/2.14.7:
+    resolution: {integrity: sha512-H+YCgdbBNMWn8c878C3RsRYcMxamWI7rB0H+1TqOy9n6u31isikcRyW1VDyoNHp7ApfmzV0+tpPopVi0W7WHAA==}
+    engines: {node: '>= 10'}
+    hasBin: true
+    dev: true
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}

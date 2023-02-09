@@ -1,9 +1,11 @@
-import type { SpacerBox, TextBox } from './boxs';
+import type { MenuBox, SpacerBox, TextBox } from './boxs';
 
 /**
  * A type accepting all pre-made boxes
  */
-export type AnyBox = BaseBox | SpacerBox | TextBox;
+export type AnyBox = BaseBox | MenuBox | SpacerBox | TextBox;
+
+export type BoxType = 'base' | 'menu' | 'spacer' | 'text';
 
 /**
  * Class with basic functions for a box
@@ -14,7 +16,13 @@ export class BaseBox {
 	 */
 	public content: any[];
 
+	/**
+	 * Type of the box
+	 */
+	public type: BoxType;
+
 	public constructor() {
 		this.content = [];
+		this.type = 'base';
 	}
 }

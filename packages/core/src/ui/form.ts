@@ -1,4 +1,4 @@
-import type { AnyBox } from './box';
+import type { AnyBox, BoxType } from './box';
 
 /**
  * Form class
@@ -7,7 +7,7 @@ export class Form {
 	/**
 	 * Content of the form, it is a array containing each boxes which composes it
 	 */
-	public content: { id: number; box: AnyBox }[];
+	public content: { id: number; type: BoxType; box: AnyBox }[];
 
 	public constructor() {
 		this.content = [];
@@ -19,7 +19,7 @@ export class Form {
 	 * @returns {void}
 	 */
 	public addBox(box: AnyBox): void {
-		this.content.push({ id: this.content.length, box: box });
+		this.content.push({ id: this.content.length, type: box.type, box: box });
 	}
 
 	/*
