@@ -3,7 +3,7 @@
  */
 
 const { extname, join: joinPaths } = require('node:path');
-const { copyFileSync, existsSync, mkdirSync, readdirSync, statSync, unlinkSync } = require('node:fs');
+const { copyFileSync, existsSync, mkdirSync, readdirSync, statSync, unlinkSync, readFileSync, writeFileSync } = require('node:fs');
 
 const _ = require('underscore');
 
@@ -22,7 +22,10 @@ async function clean() {
 
 	nativeModules.forEach((nativeModule) => {
 		const packageName = nativeModule.replace('termifier-core.', 'termifier-core-').replace('.node', '');
-		const packagePlatform = nativeModule.replace('termifier-core.', '').replace('.node', '');
+		const packagePlatform = nativeModule.replace('termifier-core.', '').replace('.node', '').split('-');
+
+		const packageOs = packagePlatform[0];
+		const packageCpu = packagePlatform[1];
 
 		const packageFolder = joinPaths(__dirname, packageName);
 		const packageNativePath = joinPaths(packageFolder, nativeModule);
@@ -32,6 +35,23 @@ async function clean() {
 			console.log(`[INFO] dir ${packageFolder} was created`);
 
 			readdirSync(basePackage).forEach((file) => {
+				if (file === 'package.json') {
+					const packageJson = readFileSync(joinPaths(basePackage, file));
+
+					const packageJsonContent = packageJson.toString()
+						.replace('{PACKAGE_NAME}', packageName)
+						.replace('{PACKAGE_OS}', packageOs)
+						.replace('{PACKAGE_CPU}', packageCpu)
+						.replace(new RegExp('{NATIVE_FILE}', 'g'), `./${nativeModule}`)
+
+					console.log(packageJsonContent);
+
+					writeFileSync(joinPaths(packageFolder, 'package.json'), packageJsonContent, { 'encoding': 'utf-8' });
+					console.log(`[INFO] file package.json in ${basePackage} dir was writed`);
+
+					return;
+				}
+
 				copyFileSync(joinPaths(basePackage, file), joinPaths(packageFolder, file));
 				console.log(`[INFO] file ${file} in ${basePackage} dir was copied to ${packageFolder}`);
 			});
