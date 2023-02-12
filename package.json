@@ -8,7 +8,7 @@
 		"url": "https://github.com/permasoft-factory/termifier.git"
 	},
 	"scripts": {
-		"format": "prettier --config \"scripts/prettier.config.js\" --write \"{packages,scripts}/**/*.{js,ts}\"",
+		"format": "prettier --config \"scripts/prettier.config.js\" --write \"{native_modules,packages,scripts}/**/*.{js,ts}\"",
 		"build": "turbo run build",
 		"doc": "node scripts/typedoc.js"
 	},
@@ -16,6 +16,7 @@
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^3.3.4",
 		"@types/node": "^18.13.0",
+		"@types/underscore": "^1.11.4",
 		"chalk-pipe": "4.0.0",
 		"execa": "4.1.0",
 		"listr2": "^5.0.7",
@@ -25,6 +26,7 @@
 		"turbo": "^1.7.4",
 		"typedoc": "^0.23.24",
 		"typedoc-plugin-markdown": "^3.14.0",
-		"typescript": "^4.9.5"
+		"typescript": "^4.9.5",
+		"underscore": "^1.13.6"
 	}
 }

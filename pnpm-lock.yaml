@@ -7,6 +7,7 @@ importers:
       '@sapphire/prettier-config': ^1.4.5
       '@sapphire/ts-config': ^3.3.4
       '@types/node': ^18.13.0
+      '@types/underscore': ^1.11.4
       chalk-pipe: 4.0.0
       execa: 4.1.0
       listr2: ^5.0.7
@@ -17,10 +18,12 @@ importers:
       typedoc: ^0.23.24
       typedoc-plugin-markdown: ^3.14.0
       typescript: ^4.9.5
+      underscore: ^1.13.6
     devDependencies:
       '@sapphire/prettier-config': 1.4.5
       '@sapphire/ts-config': 3.3.4
       '@types/node': 18.13.0
+      '@types/underscore': 1.11.4
       chalk-pipe: 4.0.0
       execa: 4.1.0
       listr2: 5.0.7
@@ -31,6 +34,7 @@ importers:
       typedoc: 0.23.24_typescript@4.9.5
       typedoc-plugin-markdown: 3.14.0_typedoc@0.23.24
       typescript: 4.9.5
+      underscore: 1.13.6
 
   packages/core:
     specifiers:
@@ -349,6 +353,10 @@ packages:
     resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
     dev: true
 
+  /@types/underscore/1.11.4:
+    resolution: {integrity: sha512-uO4CD2ELOjw8tasUrAhvnn2W4A0ZECOvMjCivJr4gA9pGgjv+qxKWY9GLTMVEK8ej85BxQOocUyE7hImmSQYcg==}
+    dev: true
+
   /@types/verror/1.10.6:
     resolution: {integrity: sha512-NNm+gdePAX1VGvPcGZCDKQZKYSiAWigKhKaz5KF94hG6f2s8de9Ow5+7AbXoeKxL8gavZfk4UquSAygOF2duEQ==}
     dev: true
@@ -446,8 +454,8 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /bundle-require/4.0.0_esbuild@0.17.6:
-    resolution: {integrity: sha512-5xjxGtR06579D7UcTBhcQO7Zg3A7ji5xuIUl7kNHSvVJ7/CmAs3bCosfYWNuD/Xm5k0jS9VFuPipSpm5S+ZlKw==}
+  /bundle-require/4.0.1_esbuild@0.17.6:
+    resolution: {integrity: sha512-9NQkRHlNdNpDBGmLpngF3EFDcwodhMUuLz9PaWYciVcQF9SE4LFjM2DB/xV1Li5JiuDMv7ZUWuC3rGbqR0MAXQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.17'
@@ -748,7 +756,7 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
     dependencies:
-      minimist: 1.2.7
+      minimist: 1.2.8
       neo-async: 2.6.2
       source-map: 0.6.1
       wordwrap: 1.0.0
@@ -939,8 +947,8 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /minimist/1.2.7:
-    resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
+  /minimist/1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
   /moment/2.29.4:
@@ -1284,7 +1292,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 4.0.0_esbuild@0.17.6
+      bundle-require: 4.0.1_esbuild@0.17.6
       cac: 6.7.14
       chokidar: 3.5.3
       debug: 4.3.4
@@ -1405,6 +1413,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /underscore/1.13.6:
+    resolution: {integrity: sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==}
+    dev: true
 
   /verror/1.10.1:
     resolution: {integrity: sha512-veufcmxri4e3XSrT0xwfUR7kguIkaxBeosDg00yDWhk49wdwkSUrvvsm7nc75e1PUyvIeZj6nS8VQRYz2/S4Xg==}

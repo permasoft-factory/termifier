@@ -26,7 +26,7 @@
         "name": "termifier-core"
     },
     "scripts": {
-        "build": "napi build --platform --release ../../native_modules && tsup"
+        "build": "napi build --platform --release ../../native_modules && tsup && node ../../native_modules/cleaner.js"
     },
     "dependencies": {
         "@termifier/logger": "workspace:^1.0.0",
